@@ -1,5 +1,6 @@
 class Director < ApplicationRecord
-  has_many :movies
-
   validates :name, :networth, presence: true
+  validates :networth, numericality: { only_integer: true }
+
+  has_many :movies
 end
