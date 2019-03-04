@@ -1,0 +1,10 @@
+<h2><%= @actor.name %></h2>
+<h3>Filmography</h3>
+
+<ul>
+  <% @actor.movies.each do |actor| %>
+    <li><%= link_to actor.name, actor %></li>
+  <% end %>
+</ul>
+
+<p><%= link_to 'Back', :back %></p>

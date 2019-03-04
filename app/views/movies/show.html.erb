@@ -1,8 +1,10 @@
-<h1><%= @movie.name %></h1>
+<h2><%= @movie.name %></h2>
 <h2>Directed by: <%= @movie.director.name%></h2>
 <h3>Cast:</h3>
 <ul>
   <% @movie.actors.order(:name).each do |actor| %>
-    <li> <%= actor.name %> </li>
+    <li> <%= link_to actor.name, actor %> </li>
   <% end %>
-<ul>
+</ul>
+
+<p><%= link_to 'Home', root_path %></p>
