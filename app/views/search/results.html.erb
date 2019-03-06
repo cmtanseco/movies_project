@@ -1,0 +1,27 @@
+<h1>Search Results</h1>
+
+<h2>Your query for "<%= @query %>" resulted in <%= pluralize(@movies.size + @directors.size + @actors.size, 'result') %>.</h2>
+<h3>Movies</h3>
+  <% if @movies.size == 0 %>
+    <h5>No movies were found.</h5>
+  <% else %>
+    <% @movies.each do |movie| %>
+      <h5><%= link_to movie.name, movie %></h5>
+    <% end %>
+  <% end %>
+<h3>Directors</h3>
+  <% if @directors.size == 0 %>
+    <h5>No directors were found.</h5>
+  <% else %>
+    <% @directors.each do |director| %>
+      <h5><%= link_to director.name, director %></h5>
+    <% end %>
+  <% end %>
+<h3>Actors</h3>
+  <% if @actors.size == 0 %>
+    <h5>No actors were found.</h5>
+  <% else %>
+    <% @actors.each do |actor| %>
+      <h5><%= link_to actor.name, actor %></h5>
+    <% end %>
+  <% end %>

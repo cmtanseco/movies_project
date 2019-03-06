@@ -8,8 +8,23 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <h1>Movies Project</h1>
   <body>
+    <header>
+    <h1>Movies Project</h1>
+      <div id="nav">
+        <ul>
+          <li><%= link_to "Movies", root_path %></li>
+          <li><%= link_to "Actors", actors_path %></li>
+          <li><%= link_to "Directors", directors_path %></li>
+          <li><%= link_to "About Us", "/pages/about" %></li>
+        </ul>
+      </div>
+        <%= form_tag(search_results_path, method: "get") do %>
+          <%= label_tag(:q, "Search for:") %>
+          <%= text_field_tag(:q) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+    </header>
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'search/results'
   # get 'directors/index'
   # get 'directors/show'
   # get 'actors/index'
@@ -9,6 +10,7 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :show]
   resources :actors, only: [:index, :show]
   resources :directors, only: [:index, :show]
-
+  get "/pages/:page" => "pages#show"
+  get 'search_results', to: 'search#results', as: 'search_results'
   root to: 'movies#index'
 end
