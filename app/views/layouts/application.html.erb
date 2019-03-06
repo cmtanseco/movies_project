@@ -9,22 +9,24 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
+    <div class="container">
     <header>
     <h1>Movies Project</h1>
-      <div id="nav">
-        <ul>
-          <li><%= link_to "Movies", root_path %></li>
-          <li><%= link_to "Actors", actors_path %></li>
-          <li><%= link_to "Directors", directors_path %></li>
-          <li><%= link_to "About Us", "/pages/about" %></li>
+    <nav class="navbar navbar-light bg-light">
+        <ul class="nav">
+          <li class="nav-item"><%= link_to "Movies", root_path, :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Actors", actors_path, :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "Directors", directors_path, :class => "nav-link" %></li>
+          <li class="nav-item"><%= link_to "About Us", "/pages/about", :class => "nav-link" %></li>
         </ul>
-      </div>
-        <%= form_tag(search_results_path, method: "get") do %>
-          <%= label_tag(:q, "Search for:") %>
-          <%= text_field_tag(:q) %>
-          <%= submit_tag("Search") %>
+        <%= form_tag(search_results_path, method: "get", class: "form-inline") do %>
+          <%= text_field_tag(:q, nil, class: 'form-control mr-sm-2') %>
+          <%= submit_tag("Search", class: "btn btn-outline-success my-2 my-sm-0") %>
         <% end %>
+    </nav>
     </header>
-    <%= yield %>
+
+      <%= yield %>
+    </div>
   </body>
 </html>
