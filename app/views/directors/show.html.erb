@@ -1,8 +1,8 @@
-<h2><%= @director.name%></h2>
+<h2>Director: <%= @director.name%></h2>
 
 <h3>Networth: <%= number_to_currency(@director.networth) %>
 
-<h3>Movies<h3>
+<h3>Movies</h3>
 
 <ul>
   <% @director.movies.each do |director| %>
