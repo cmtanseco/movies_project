@@ -1,5 +1,9 @@
 <h2><%= @movie.name %></h2>
-<h2>Directed by: <%= @movie.director.name%></h2>
+<h2>Directed by: <%= link_to @movie.director.name, @movie.director %></h2>
+
+<h3>Budget: <%= number_to_currency(@movie.budget) %></h3>
+<h3>Worldwide Gross: <%= number_to_currency(@movie.worldwide_gross) %></h3>
+
 <h3>Cast:</h3>
 <ul>
   <% @movie.actors.order(:name).each do |actor| %>

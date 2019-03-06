@@ -1,0 +1,14 @@
+<h2><%= @director.name%></h2>
+
+<h3>Networth: <%= number_to_currency(@director.networth) %>
+
+<h3>Movies<h3>
+
+<ul>
+  <% @director.movies.each do |director| %>
+    <li><%= link_to director.name, director %></li>
+  <% end %>
+</ul>
+
+
+<p><%= link_to 'Back', :back %></p>
